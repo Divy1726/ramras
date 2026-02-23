@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Disable MultiViews (very important)
+Options -Multiviews
+
+# Hide .html extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
